@@ -24,13 +24,33 @@ This project analyzes SpaceX Falcon 9 launch data to predict the success of firs
   - Temporal analysis of landing success rates
   - Comprehensive insights with professional documentation
 
+- **EDA with visualization.ipynb**: Visual analysis of SpaceX launch patterns
+  - **7 Key Visualizations:**
+    1. Flight Number vs Payload Mass - Success correlation analysis
+    2. Flight Number vs Launch Site - Site usage and success over time
+    3. Payload Mass vs Launch Site - Site payload capacity analysis
+    4. Success Rate by Orbit Type - Orbit difficulty assessment
+    5. Flight Number vs Orbit Type - Mission evolution tracking
+    6. Payload Mass vs Orbit Type - Orbit payload capacity
+    7. Yearly Success Trend - Progressive improvement from 0% (2010) to 85% (2020)
+  - **Feature Engineering:**
+    - Selected 12 relevant features for ML modeling
+    - One-hot encoded categorical variables (Orbit, LaunchSite, LandingPad, Serial)
+    - Expanded to 76 features for comprehensive analysis
+    - All features standardized to float64 data type
+  - Professional markdown documentation throughout
+  - Clear, descriptive code comments
+
 ### 4. Datasets
 - `spacex_launch_data.csv`: Raw launch data
 - `spacex_web_scraped_data.csv`: Web scraped launch data
-- `spacex_launch_data_clean.csv`: Cleaned and processed data with classification labels
+- `spacex_launch_data_clean.csv`: Cleaned and processed data with classification labels (90 rows × 18 columns)
+- `spacex_features.csv`: **NEW** - Engineered features dataset ready for ML model training (90 rows × 76 features)
 - `my_data1.db`: SQLite database for SQL analysis
 
 ## Key Findings from EDA
+
+### SQL Analysis Insights:
 - **Launch Sites**: Three primary launch sites - CCSFS SLC 40, VAFB SLC 4E, and KSC LC 39A
 - **Payload Statistics**: 
   - Total ISS mission payload: 68,878.7 kg
@@ -38,12 +58,22 @@ This project analyzes SpaceX Falcon 9 launch data to predict the success of firs
 - **Landing Milestones**: First successful ground landing (RTLS) on 2015-12-22
 - **Success Patterns**: Progressive improvement in landing capabilities from 2010-2017
 
+### Visual Analysis Insights:
+- **Temporal Improvement**: Landing success rate dramatically improved from 0% (2010-2013) to ~85% (2020)
+- **Payload Impact**: Heavier payloads (>10,000 kg) show varying success rates across different orbits
+- **Launch Site Performance**: CCAFS SLC 40 shows the highest activity with mixed success rates across flight numbers
+- **Orbit Difficulty**: LEO and ISS missions show highest success rates, while GTO missions are more challenging
+- **Mission Evolution**: Clear shift towards LEO and VLEO missions in recent flights (flight #80+)
+- **Technology Advancement**: Significant improvement in landing success after flight #25, indicating refined techniques
+
 ## Technologies Used
-- Python
-- Pandas & NumPy for data manipulation
-- SQL & SQLite for data querying
-- Jupyter Notebooks for interactive analysis
-- Git & GitHub for version control
+- **Python Libraries**: 
+  - Pandas & NumPy for data manipulation
+  - Matplotlib & Seaborn for data visualization
+  - Scikit-learn for feature engineering
+- **Database**: SQL & SQLite for data querying
+- **Development**: Jupyter Notebooks for interactive analysis
+- **Version Control**: Git & GitHub for code management
 
 ## Project Goals
 - Predict first stage landing success to estimate launch costs
