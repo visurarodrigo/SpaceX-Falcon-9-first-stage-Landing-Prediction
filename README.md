@@ -158,4 +158,4 @@ Applied Data Science Capstone Project
 This project is part of IBM Data Science Professional Certificate coursework.
 
 ## 👤 Author
-IBM Data Science Capstone - Applied Data Science
+Visura Rodrigo
