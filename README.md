@@ -42,7 +42,6 @@ This project analyzes SpaceX Falcon 9 launch data to predict the success of firs
   - Clear, descriptive code comments
 
 - **Interactive Visual Analytics with Folium.ipynb**: **NEW** - Interactive geospatial analysis of SpaceX launch sites
-  - **📌 Note**: Interactive maps won't display on GitHub. [**View on NBViewer**](https://nbviewer.org/github/visurarodrigo/SpaceX-Falcon-9-first-stage-Landing-Prediction/blob/main/Interactive%20Visual%20Analytics%20with%20Folium.ipynb) for full interactivity!
   - **Complete Analysis with 10 Sections:**
     1. Import required libraries (Folium, Pandas, plugins)
     2. Load and prepare SpaceX launch data with data type conversions
