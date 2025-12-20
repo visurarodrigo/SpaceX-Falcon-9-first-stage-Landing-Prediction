@@ -103,33 +103,6 @@ python spacex-dash-app.py
 
 ---
 
-## 📊 Analysis Notebooks Summary
-
-### SpaceX Launch Analysis Insights
-**Answers 5 Critical Questions:**
-1. Which site has the most successful launches?
-2. Which site has the highest success rate?
-3. Which payload range performs best/worst?
-4. Which F9 Booster version is most reliable?
-5. What are the key success factors?
-
-### Folium Interactive Analysis
-**7 Interactive Tasks:**
-- NASA JSC location mapping
-- Launch site markers & circles
-- Success/failure color coding
-- Distance calculations (coastlines, cities)
-- Mouse position coordinates
-- Proximity analysis
-- Geographic pattern identification
-
----
-
-## 🎓 IBM Data Science Professional Certificate
-Applied Data Science Capstone Project
-
----
-
 ## 📌 Quick Start
 
 1. **Clone repository**
@@ -154,7 +127,29 @@ Applied Data Science Capstone Project
 
 ---
 
-## 📄 License
+## 📊 Analysis Notebooks Summary
+
+### SpaceX Launch Analysis Insights
+**Answers 5 Critical Questions:**
+1. Which site has the most successful launches?
+2. Which site has the highest success rate?
+3. Which payload range performs best/worst?
+4. Which F9 Booster version is most reliable?
+5. What are the key success factors?
+
+### Folium Interactive Analysis
+**7 Interactive Tasks:**
+- NASA JSC location mapping
+- Launch site markers & circles
+- Success/failure color coding
+- Distance calculations (coastlines, cities)
+- Mouse position coordinates
+- Proximity analysis
+- Geographic pattern identification
+
+---
+
+## 🎓 IBM Data Science Professional Certificate
 This project is part of IBM Data Science Professional Certificate coursework.
 
 ## 👤 Author
