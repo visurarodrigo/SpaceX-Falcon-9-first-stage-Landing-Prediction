@@ -50,11 +50,11 @@ Predicting SpaceX Falcon 9 first stage landing success using data science and ma
 | **spacex-dash-app.py** | Professional Dash web app with 9 interactive visualizations |
 
 ### 6️⃣ Datasets
-- `spacex_launch_data.csv` - Raw data
-- `spacex_launch_data_clean.csv` - Cleaned data (92 rows × 18 columns)
-- `spacex_features.csv` - ML-ready features (92 rows × 76 columns)
-- `spacex_web_scraped_data.csv` - Web scraped data
-- `my_data1.db` - SQLite database
+- `data/raw/spacex_launch_data.csv` - Raw data
+- `data/processed/spacex_launch_data_clean.csv` - Cleaned data (92 rows × 18 columns)
+- `data/processed/spacex_features.csv` - ML-ready features (92 rows × 76 columns)
+- `data/raw/spacex_web_scraped_data.csv` - Web scraped data
+- `data/raw/my_data1.db` - SQLite database
 
 ---
 
@@ -94,7 +94,7 @@ Predicting SpaceX Falcon 9 first stage landing success using data science and ma
 
 **Run the dashboard:**
 ```bash
-cd SpaceX-Falcon-9-first-stage-Landing-Prediction
+   cd SpaceX-Falcon-9-first-stage-Landing-Prediction
 python spacex-dash-app.py
 # Open http://127.0.0.1:8050/
 ```
@@ -188,7 +188,7 @@ python spacex-dash-app.py
 
 4. **Launch dashboard**
    ```bash
-   python spacex-dash-app.py
+   python src/spacex-dash-app.py
    ```
 
 ---

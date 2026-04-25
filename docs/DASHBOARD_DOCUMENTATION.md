@@ -5,8 +5,8 @@ Interactive web dashboard for analyzing SpaceX Falcon 9 first-stage landing pred
 
 ## File Structure
 ```
-spacex-dash-app.py          - Main dashboard application (~700 lines)
-spacex_launch_data_clean.csv - Cleaned launch data (92 records)
+src/spacex-dash-app.py      - Main dashboard application (~700 lines)
+data/processed/spacex_launch_data_clean.csv - Cleaned launch data (92 records)
 DASHBOARD_DOCUMENTATION.md  - This documentation file
 README.md                   - Project overview and instructions
 ```
@@ -78,7 +78,7 @@ README.md                   - Project overview and instructions
 - plotly 6.5.0
 
 ### Data Schema
-- **spacex_launch_data_clean.csv**:
+- **data/processed/spacex_launch_data_clean.csv**:
   - FlightNumber, Date, BoosterVersion, PayloadMass
   - Orbit, LaunchSite, Outcome, Class (0=failed, 1=success)
   - Longitude, Latitude
@@ -101,13 +101,13 @@ README.md                   - Project overview and instructions
 
 1. **Activate Virtual Environment**:
    ```bash
-   cd "c:\Users\a12u\OneDrive\Desktop\Courses\IBM Data Science\Applied Data Science Capstone\SpaceX-Falcon-9-first-stage-Landing-Prediction"
+   cd "c:\Users\a12u\OneDrive\Desktop\Courses\Data Science\IBM Data Science\Applied Data Science Capstone\SpaceX-Falcon-9-first-stage-Landing-Prediction"
    ..\..\.venv\Scripts\activate
    ```
 
 2. **Run Application**:
    ```bash
-   python spacex-dash-app.py
+   python src/spacex-dash-app.py
    ```
 
 3. **Access Dashboard**:

@@ -19,9 +19,9 @@ import plotly.graph_objects as go
 # ============================================================================
 
 # Read the SpaceX launch data into pandas dataframe
-import os
-script_dir = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(script_dir, "spacex_launch_data_clean.csv")
+from pathlib import Path
+
+csv_path = Path(__file__).resolve().parent.parent / "data" / "processed" / "spacex_launch_data_clean.csv"
 spacex_df = pd.read_csv(csv_path)
 max_payload = spacex_df['PayloadMass'].max()
 min_payload = spacex_df['PayloadMass'].min()
