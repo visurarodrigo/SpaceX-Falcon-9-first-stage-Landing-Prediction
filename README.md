@@ -1,200 +1,153 @@
-# 🚀 SpaceX Falcon 9 First Stage Landing Prediction
+# SpaceX Falcon 9 First Stage Landing Prediction
 
-## 📋 Overview
-Predicting SpaceX Falcon 9 first stage landing success using data science and machine learning. This analysis helps understand factors affecting landing outcomes and estimate launch costs.
+## Overview
+This project predicts Falcon 9 first-stage landing success using historical launch data, exploratory analysis, and machine learning.
 
----
+The work combines:
+- Data collection from API and web sources
+- Data wrangling and feature engineering
+- Exploratory analysis (SQL, visualization, geospatial)
+- Classification modeling and comparison
+- An interactive Dash dashboard
 
-## 📂 Project Structure
+## Project Structure
 
-### 1️⃣ Data Collection
+### Data Collection
 | Notebook | Description |
 |----------|-------------|
-| **Data Collection API.ipynb** | SpaceX API data extraction |
-| **Data Collection web scraping.ipynb** | Web scraping launch information |
+| Data Collection API.ipynb | Extracts launch data from the SpaceX API |
+| Data Collection web scraping.ipynb | Collects additional launch details by web scraping |
 
-### 2️⃣ Data Preparation
+### Data Preparation
 | Notebook | Description |
 |----------|-------------|
-| **Data wrangling.ipynb** | Data cleaning, binary classification labels (success/failed) |
+| Data wrangling.ipynb | Cleans data and creates binary landing labels |
 
-### 3️⃣ Exploratory Data Analysis
-| Notebook | Key Features |
-|----------|--------------|
-| **EDA with SQL.ipynb** | Database queries, launch site analysis, payload statistics |
-| **EDA with visualization.ipynb** | 7 visualizations, feature engineering (76 features), success trends |
-| **Interactive Visual Analytics with Folium.ipynb** | Interactive maps, geospatial analysis, distance calculations |
-| **SpaceX Launch Analysis Insights.ipynb** | 5 key questions answered with detailed statistical analysis |
-
-### 4️⃣ Machine Learning Prediction
+### Exploratory Data Analysis
 | Notebook | Description |
 |----------|-------------|
-| **Prediction ML.ipynb** | Comprehensive ML analysis with 4 algorithms, hyperparameter tuning, and detailed evaluation |
+| EDA with SQL.ipynb | SQL-based launch site, payload, and mission analysis |
+| EDA with visualization.ipynb | Visual EDA and trend analysis with engineered features |
+| Interactive Visual Analytics with Folium.ipynb | Geospatial analysis, maps, and distance calculations |
+| SpaceX Launch Analysis Insights.ipynb | Consolidated business and technical insights |
 
-**Models Evaluated:**
-- ✅ Logistic Regression (L1/L2 regularization)
-- ✅ Support Vector Machine (Linear & RBF kernels)
-- ✅ Decision Tree (depth optimization)
-- ✅ K-Nearest Neighbors (algorithm comparison)
+### Machine Learning
+| Notebook | Description |
+|----------|-------------|
+| Prediction ML.ipynb | End-to-end model training, tuning, and evaluation |
 
-**Results:**
-- Test Accuracy: 83-85% across all models
-- Best Models: Decision Tree & SVM
-- Comprehensive metrics: Accuracy, Precision, Recall, F1-Score
-- Cross-validation scores comparison
-- Confusion matrices for all models
-
-### 5️⃣ Interactive Dashboard
+### Dashboard
 | File | Description |
 |------|-------------|
-| **spacex-dash-app.py** | Professional Dash web app with 9 interactive visualizations |
+| src/spacex-dash-app.py | Dash app with interactive launch and payload analytics |
 
-### 6️⃣ Datasets
-- `data/raw/spacex_launch_data.csv` - Raw data
-- `data/processed/spacex_launch_data_clean.csv` - Cleaned data (92 rows × 18 columns)
-- `data/processed/spacex_features.csv` - ML-ready features (92 rows × 76 columns)
-- `data/raw/spacex_web_scraped_data.csv` - Web scraped data
-- `data/raw/my_data1.db` - SQLite database
+### Data Files
+- data/raw/spacex_launch_data.csv: Raw launch data
+- data/raw/spacex_web_scraped_data.csv: Web-scraped launch data
+- data/processed/spacex_launch_data_clean.csv: Cleaned dataset (92 rows x 18 columns)
+- data/processed/spacex_features.csv: ML feature set (92 rows x 76 columns)
 
----
+## Key Insights
 
-## 🎯 Key Insights
+### Landing Success Trend
+- 2010-2013: near 0% success rate
+- 2020: approximately 85% success rate
+- Marked improvement after approximately flight 25
 
-### 📈 Success Rate Evolution
-- **2010-2013**: 0% success rate
-- **2020**: ~85% success rate
-- Significant improvement after flight #25
+### Site and Orbit Performance
+- Highest success site: KSC LC-39A
+- Most active site: CCAFS SLC 40
+- Stronger outcomes: LEO/ISS missions
+- More challenging outcomes: GTO missions
 
-### 🏆 Best Performers
-- **Highest Success Site**: KSC LC-39A
-- **Most Active Site**: CCAFS SLC 40
-- **Best Orbit**: LEO/ISS missions
-- **Challenging Orbit**: GTO missions
+### Payload and Geography
+- Average payload mass: 6,123 kg
+- Very high payloads (>10,000 kg) show more variable outcomes
+- Launch sites are near coastlines, supporting range safety and operations
 
-### 🗺️ Geographic Findings
-- All sites located near coastlines (safety)
-- CCAFS SLC 40: Cape Canaveral, FL (28.56°N, 80.58°W)
-- VAFB SLC 4E: Vandenberg, CA (34.63°N, 120.61°W)
-- KSC LC 39A: Kennedy Space Center, FL (28.57°N, 80.65°W)
+### Business Value
+- Model accuracy is in the 83-85% range
+- Best-performing models: Decision Tree and SVM
+- Successful first-stage recovery can represent approximately $50M-$60M in savings per launch
 
-### 📦 Payload Analysis
-- Average payload: 6,123 kg
-- Heavier payloads (>10,000 kg) show variable success
-- Optimal payload ranges identified
+## Machine Learning Summary
 
-### 🤖 Machine Learning Results
-- **Best Accuracy**: 83-85% for landing prediction
-- **Top Models**: Decision Tree & SVM
-- **Key Features**: Launch site, orbit type, payload mass, reusability components (grid fins, legs)
-- **Business Impact**: $50-60M cost savings per successful landing can be forecasted with high confidence
+### Models Evaluated
+- Logistic Regression (L1/L2 regularization)
+- Support Vector Machine (linear and RBF kernels)
+- Decision Tree (depth tuning)
+- K-Nearest Neighbors
 
----
+### Evaluation Approach
+- Train/test split: 80/20
+- Hyperparameter tuning: GridSearchCV
+- Cross-validation: 10-fold
+- Metrics: accuracy, precision, recall, F1-score, confusion matrix
 
-## 🖥️ Interactive Dashboard Features
+## Dashboard Features
+The Dash app includes:
+- Launch site filtering
+- Success-rate visualizations
+- Payload-versus-outcome scatter analysis
+- Orbit-level summaries
+- Timeline and trend views
 
-**Run the dashboard:**
+Run the dashboard:
+
 ```bash
-   cd SpaceX-Falcon-9-first-stage-Landing-Prediction
-python spacex-dash-app.py
-# Open http://127.0.0.1:8050/
+python src/spacex-dash-app.py
 ```
 
-**Dashboard includes:**
-- 🎯 Launch site dropdown filter
-- 📊 Dynamic statistics cards (Total, Success Rate, Avg Payload)
-- 🥧 Success rate pie charts with AI insights
-- 📈 Payload vs Success scatter plots
-- 🛰️ Orbit type analysis
-- 📅 Timeline visualization
-- 💡 Real-time insights generation
+Then open: http://127.0.0.1:8050/
 
----
+## Quick Start
 
-## 🛠️ Technologies Used
+1. Clone the repository:
 
-**Languages & Tools:**
-- Python 3.12 | Pandas | NumPy | Scikit-learn
-- SQL & SQLite
-- Dash 3.3.0 & Plotly 6.5.0
-- Folium (interactive maps)
-- Jupyter Notebooks
+```bash
+git clone https://github.com/visurarodrigo/SpaceX-Falcon-9-first-stage-Landing-Prediction.git
+cd SpaceX-Falcon-9-first-stage-Landing-Prediction
+```
 
-**Analysis Methods:**
-- Statistical analysis & aggregations
-- Feature engineering (one-hot encoding, standardization)
-- Geospatial analysis (Haversine formula)
-- Machine Learning (GridSearchCV, cross-validation)
-- Data visualization & interactive dashboards
+2. Install dependencies:
 
-**ML Techniques:**
-- GridSearchCV for hyperparameter optimization
-- 10-fold cross-validation
-- StandardScaler for feature normalization
-- Classification metrics (confusion matrix, precision, recall, F1)
+```bash
+pip install pandas numpy matplotlib seaborn plotly dash folium scikit-learn
+```
 
----
+3. Open Jupyter and run notebooks in workflow order:
 
-## 📊 Analysis Notebooks Summary
+```bash
+jupyter notebook
+```
 
-### SpaceX Launch Analysis Insights
-**Answers 5 Critical Questions:**
-1. Which site has the most successful launches?
-2. Which site has the highest success rate?
-3. Which payload range performs best/worst?
-4. Which F9 Booster version is most reliable?
-5. What are the key success factors?
+Suggested order:
+1. Data Collection API.ipynb
+2. Data Collection web scraping.ipynb
+3. Data wrangling.ipynb
+4. EDA with SQL.ipynb
+5. EDA with visualization.ipynb
+6. Interactive Visual Analytics with Folium.ipynb
+7. Prediction ML.ipynb
+8. SpaceX Launch Analysis Insights.ipynb
 
-### Folium Interactive Analysis
-**7 Interactive Tasks:**
-- NASA JSC location mapping
-- Launch site markers & circles
-- Success/failure color coding
-- Distance calculations (coastlines, cities)
-- Mouse position coordinates
-- Proximity analysis
-- Geographic pattern identification
+4. Launch the dashboard:
 
-### Prediction ML Notebook
-**Complete ML Pipeline:**
-1. 📦 Data loading & preprocessing (90 launches, 76+ features)
-2. 🎯 Train-test split (80/20)
-3. 🔧 Hyperparameter tuning with GridSearchCV
-4. 📊 Model comparison (4 algorithms)
-5. 📈 Comprehensive evaluation metrics
-6. 🎨 Professional visualizations (confusion matrices, bar charts)
-7. 💡 Business insights & recommendations
+```bash
+python src/spacex-dash-app.py
+```
 
----
-## 📌 Quick Start
+## Technologies Used
+- Python 3.x
+- Pandas, NumPy, Matplotlib, Seaborn
+- Scikit-learn
+- Plotly, Dash
+- Folium
+- SQLite and SQL
+- Jupyter Notebook
 
-1. **Clone repository**
-   ```bash
-   git clone https://github.com/visurarodrigo/SpaceX-Falcon-9-first-stage-Landing-Prediction.git
-   cd SpaceX-Falcon-9-first:
-     1. Data Collection (API & Web Scraping)
-     2. Data Wrangling
-     3. EDA (SQL & Visualization)
-     4. Prediction ML (Machine LearningLanding-Prediction
-   ```
+## Program Context
+This project is part of the IBM Data Science Professional Certificate capstone.
 
-2. **Install dependencies**
-   ```bash
-   pip install pandas numpy matplotlib seaborn plotly dash folium scikit-learn
-   ```
-
-3. **Run notebooks**
-   - Open Jupyter: `jupyter notebook`
-   - Run notebooks in order (1→2→3)
-
-4. **Launch dashboard**
-   ```bash
-   python src/spacex-dash-app.py
-   ```
-
----
-
-## 🎓 IBM Data Science Professional Certificate
-This project is part of IBM Data Science Professional Certificate coursework.
-
-## 👤 Author
+## Author
 Visura Rodrigo
